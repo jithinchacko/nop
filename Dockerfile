@@ -5,5 +5,5 @@ RUN cd /nop && unzip nopCommerce_4.50.2_NoSource_linux_x64.zip && rm -rf nopComm
 
 
 FROM mcr.microsoft.com/dotnet/aspnet:5.0
-RUN cd /nop 
+RUN --from=builder cd /nop 
 
