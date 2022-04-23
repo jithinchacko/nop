@@ -5,9 +5,9 @@ RUN cd /nop && unzip nopCommerce_4.50.2_NoSource_linux_x64.zip && rm -rf nopComm
 
 
 FROM mcr.microsoft.com/dotnet/aspnet:5.0
+COPY --from=builder /nop /nop-new
 EXPOSE 80
-COPY --from=builder /nop /nop 
-
-CMD [ "dotnet", "/nop/Nop.Web.dll" ] 
+WORKDIR /nop-new 
+CMD [ "dotnet", "/nop-new/Nop.Web.dll" ] 
 
 
