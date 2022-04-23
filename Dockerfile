@@ -1,6 +1,6 @@
 FROM ubuntu:20.04 AS builder 
 RUN apt update && apt install wget -y && apt install unzip -y 
-ADD https://github.com/nopSolutions/nopCommerce/releases/download/release-4.50.2/nopCommerce_4.50.2_NoSource_linux_x64.zip /nop/
+ADD https://github.com/nopSolutions/nopCommerce/releases/download/release-4.50.2/nopCommerce_4.50.2_NoSource_linux_x64.zip /nop/nopCommerce_4.50.2_NoSource_linux_x64.zip
 RUN cd nop
 RUN unzip nopCommerce_4.50.2_NoSource_linux_x64.zip
 
